@@ -8,13 +8,13 @@
 
       <div class="flex items-center gap-4">
         <a class="relative text-xl font-bold font-inter after:block after:h-[2px] after:bg-blue-700 after:scale-x-0 hover:after:scale-x-100 after:transition after:duration-300 after:origin-left" href="#about">
-          About
+          ABOUT
         </a>
         <a class="relative text-xl font-bold font-inter after:block after:h-[2px] after:bg-blue-700 after:scale-x-0 hover:after:scale-x-100 after:transition after:duration-300 after:origin-left" href="#projects">
-          Projects
+          PROJECTS
         </a>
         <a class="relative text-xl font-bold font-inter after:block after:h-[2px] after:bg-blue-700 after:scale-x-0 hover:after:scale-x-100 after:transition after:duration-300 after:origin-left pr-4" href="#contact">
-          Contact
+          CONTACT
         </a>
       </div>
     </nav>
