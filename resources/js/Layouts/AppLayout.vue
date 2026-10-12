@@ -3,7 +3,7 @@
     <!-- Navbar Kamu -->
     <nav class="fixed top-0 left-0 w-full bg-black/80 backdrop-blur-xs text-white flex items-center justify-between p-4 z-50">
       <a href="#home" class="flex items-center gap-3 group pl-2">
-        <img :src="'/images/logo.jpg'" alt="Hafidz Prananda" class="w-10 h-10 rounded-full object-cover border-2 border-transparent group-hover:border-blue-700 trasition duratiion-300">
+        <img :src="'/images/logo.jpg'" alt="Hafidz Prananda" class="w-10 h-10 rounded-full object-cover border-2 border-transparent group-hover:border-blue-700 trasition duration-300">
       </a>
 
       <div class="flex items-center gap-4">

@@ -16,3 +16,50 @@ body {
     margin: 0;
     background-color: black;
 }
+
+.carousel-move {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-enter-active, .carousel-leave-active,
+.carousel-next-enter-active, .carousel-next-leave-active,
+.carousel-prev-enter-active, .carousel-prev-leave-active {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-leave-active,
+.carousel-next-leave-active,
+.carousel-prev-leave-active {
+    position: absolute;
+    width: calc(33.333% - 11px);
+}
+
+.carousel-enter-from {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.carousel-leave-to {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.carousel-next-enter-from {
+    opacity: 0;
+    transform: translateX(30px);
+}
+
+.carousel-next-leave-to {
+    opacity: 0;
+    transform: translateX(-30px);
+}
+
+.carousel-prev-enter-from {
+    opacity: 0;
+    transform: translateX(-30px);
+}
+
+.carousel-prev-leave-to {
+    opacity: 0;
+    transform: translateX(30px);
+}

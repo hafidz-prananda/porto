@@ -9,56 +9,69 @@
         </a>
       </section>
   
-      <section class="bg-black h-screen flex flex-col items-center justify-center space-y-2" id="about">
-        <h2 class="text-4xl pt-5 font-bold font-inte">ABOUT ME</h2>
-        <div class="flex flex-col md:flex-row items-center justify-center gap-8 max-w-6xl w-full">
-          <div class="shrink-0">
-            <img :src="'images/photo.jpeg'" alt="" class="w-60 h-80 rounded-lg">
-          </div>
-          <div class="space-y-2 text-gray-400">
-            <p class="text-xl text-justify font-inter">I'm an Information Technology fresh graduate with a focus on fullstack and backend development.</p>
-            <p class="text-xl text-justify font-inter">While I am just starting my professional career in the industry, I have gained a deep understanding of modern web development workflows through independent research, internship, and the completion of academic projects. I am experienced in designing application architectures using <b>Laravel</b>, managing <b>MySQL</b> databases, and integrating interactive user interfaces built with <b>Vue.js</b></p>
-            <p class="text-xl text-justify font-inter">As a fresh graduate, I am highly motivated to learn, adaptable to industry standard workflows, and ready to make a meaningful contribution to a development team.</p>
+      <section class="bg-black h-screen flex flex-col items-center justify-center pt-20 pb-6 px-4 space-y-4" id="about">
+        <!-- CONTAINER ABOUT ME -->
+        <div class="max-w-6xl w-full text-center">
+          <h2 class="text-3xl md:text-4xl font-bold font-inter text-white mb-6">ABOUT ME</h2>
+          <!-- PROFILE PHOTO -->
+          <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+            <div class="shrink-0">
+              <img :src="'images/photo.jpeg'" alt="Profile Photo" class="w-52 h-68 md:h-56 md:h-72 object-cover rounded-lg shadow-lg">
+            </div>
+
+            <div class="space-y-3 text-gray-300 text-left">
+              <p class="text-base md:text-xl text-justify font-inter leading-relaxed">I'm an Information Technology fresh graduate with a focus on fullstack and backend development.</p>
+              <p class="text-base md:text-xl text-justify font-inter leading-relaxed">While I am just starting my professional career in the industry, I have gained a deep understanding of modern web development workflows through independent research, internship, and the completion of academic projects. I am experienced in designing application architectures using <b>Laravel</b>, managing <b>MySQL</b> databases, and integrating interactive user interfaces built with <b>Vue.js</b></p>
+              <p class="text-base md:text-xl text-justify font-inter leading-relaxed">As a fresh graduate, I am highly motivated to learn, adaptable to industry standard workflows, and ready to make a meaningful contribution to a development team.</p>
+            </div>
           </div>
         </div>
-        <h2 class="text-4xl font-bold font-inter">TECH STACK</h2>
-        <div class="w-full max-w-6xl mx-auto text-center">
-          <div class="inline-flex p-1 space-x-1 bg-gray-700 rounded-full mb-6">
+        <!-- CONTAINER TECH STACK -->
+        <div class="w-full max-w-6xl mx-auto text-center mt-6">
+          <h2 class="text-3xl md:text-4xl font-bold font-inter text-white mb-4">TECH STACK</h2>
+          <!-- CATEGORY BUTTON -->
+          <div class="inline-flex p-1 space-x-1 bg-gray-800 border border-gray-700 rounded-full mb-6">
             <button
               v-for="cat in categories"
               :key="cat"
               @click="selectCategory(cat)"
-              class="px-4 py-2 rounded-full font-semibold font-inter transition-all duration-200"
+              class="px-4 py-1.5 rounded-full font-semibold text-base font-inter transition-all duration-300 cursor-pointer"
               :class="activeCategory === cat ? 'bg-blue-600 text-white shadow' : 'bg-transparent text-gray-400 hover:text-white'"
             >
               {{ cat }}
             </button>
           </div>
+          <!-- CAROUSEL TECH STACK -->
           <div class="relative flex items-center justify-center gap-4">
+            <!-- PREV BUTTON -->
             <button
               v-if="filteredStacks.length > 3"
               @click="prev"
-              class="bg-gray-800/80 hover:bg-blue-600 text-white w-10 h-10 rounded-full shadow-lg transition duration-200 flex items-center justify-center shrink-0 cursor-pointer"
+              class="bg-gray-800/80 hover:bg-blue-600 text-white w-10 h-10 rounded-full shadow-lg transition duration-200 flex items-center justify-center shrink-0 cursor-pointer z-10"
             >
               &#10094;
             </button>
-            <div class="flex flex-wrap justify-center gap-6 w-full px-1">
+            <!-- TRANSITION GROUP CARD -->
+            <transition-group
+              :name="animationType === 'slide' ? 'carousel-' + direction : 'carousel'"
+              tag="div"
+              class="flex flex-wrap justify-center gap-4 w-full px-1 min-h-[150px] overflow-hidden"
+            >
               <div
                 v-for="stack in visibleStacks"
-                :key="stack.name"
-                class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-blue-700 rounded-lg shadow-md p-4 hover:shadow-xl transition duration-300"
+                :key="stack.name + '-' + activeCategory"
+                class="w-full sm:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)] bg-blue-700 border border-blue-600 rounded-lg shadow-md p-4 hover:shadow-xl transition-all duration-300 flex flex-col items-center justify-center"
               >
-                <div class="flex flex-col items-center">
-                  <img :src="stack.logo" alt="logo" class="w-16 h-16 object-contain">
-                  <h3 class="text-xl font-bold font-inter text-white">{{ stack.name }}</h3>
-                  <p class="text-lg text-white font-inter text-center">{{ stack.description }}</p>
-                </div>
+                <img :src="stack.logo" alt="logo" class="w-12 h-12 object-contain mb-2">
+                <h3 class="text-xl font-bold font-inter text-white">{{ stack.name }}</h3>
+                <p class="text-base text-blue-100 font-inter text-center line-clamp-2">{{ stack.description }}</p>
               </div>
-            </div>
+            </transition-group>
+            <!-- NEXT BUTTON -->
             <button
               v-if="filteredStacks.length > 3"
               @click="next"
-              class="bg-gray-800/80 hover:bg-blue-600 text-white w-10 h-10 rounded-full shadow-lg transition duration-200 flex items-center justify-center shrink-0 cursor-pointer"
+              class="bg-gray-800/80 hover:bg-blue-600 text-white w-10 h-10 rounded-full shadow-lg transition duration-200 flex items-center justify-center shrink-0 cursor-pointer z-10"
             >
               &#10095;
             </button>
@@ -87,7 +100,7 @@
   import AppLayout from '../Layouts/AppLayout.vue';
 
   const activeCategory = ref("Programming Languages");
-  const categories = ref(["Programming Languages", "Frameworks", "Tools"]);
+  const categories = ref(["Programming Languages", "Databases", "Frameworks", "Tools"]);
   const currentIndex = ref(0);
 
   const techStacks = ref([
@@ -110,7 +123,7 @@
       category: "Programming Languages",
     },
     {
-      name: "Java Script",
+      name: "JavaScript",
       description: "Interactive web",
       logo: "/images/javascript.svg",
       category: "Programming Languages",
@@ -131,10 +144,10 @@
       name: "MySQL",
       description: "Relational DB",
       logo: "/images/mysql.svg",
-      category: "Programming Languages",
+      category: "Databases",
     },
     {
-      name: "Code Igniter",
+      name: "CodeIgniter",
       description: "PHP backend framework",
       logo: "/images/codeigniter.svg",
       category: "Frameworks",
@@ -153,7 +166,7 @@
     },
     {
       name: "Azure Data Studio",
-      description: "DB editor",
+      description: "SQL editor",
       logo: "/images/azure.svg",
       category: "Tools",
     },
@@ -184,16 +197,24 @@
     return result;
   });
 
+  const direction = ref('next');
+  const animationType = ref('slide');
+
   const next = () => {
+    direction.value = 'next';
+    animationType.value = 'slide';
     currentIndex.value = (currentIndex.value + 1) % filteredStacks.value.length;
   };
 
   const prev = () => {
+    direction.value = 'prev';
+    animationType.value = 'slide';
     currentIndex.value = (currentIndex.value - 1 + filteredStacks.value.length) %filteredStacks.value.length;
   };
 
   const selectCategory = (cat) => {
     activeCategory.value = cat;
+    animationType.value = 'fade';
     currentIndex.value = 0;
   };
 </script>
