@@ -80,11 +80,39 @@
       </section>
   
       <section class="bg-slate-950 h-screen flex flex-col items-center justify-center space-y-2" id="projects">
-        <h2 class="text-4xl font-bold font-inter">PROJECTS</h2>
-        <ul class="text-4xl font-bold font-jakarta">
-          <li>Portofolio Laravel + Vue 3</li>
-          <li>Penelitian CNN cowhide classification</li>
-        </ul>
+        <h2 class="text-3xl md:text-4xl font-bold font-inter mb-6">PROJECTS</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl w-full px-6">
+          <div class="bg-gray-800 rounded-lg shadow-md flex flex-col hover:shadow-xl transition">
+            <img :src="'/images/Homepage_EXCIS.jpg'" alt="Portfolio Project" class="w-full h-80 rounded-t-md"/>
+            <div class="p-4 space-y-4">
+              <h3 class="text-2xl font-bold text-white text-inter">Internship Full Stack EXCIS UMY</h3>
+              <p class="text-gray-300 text-lg font-inter text-justify">
+                Intership untuk mengembangkan website Extracurricular Credit System (EXCIS) di Direktorat Digital Informasi (DDI) UMY.
+                Khususnya mengembangkan untuk admin Direktorat Kemahasiswaan dan Karir (DKK).
+              </p>
+              <div class="flex flex-wrap gap-2 pt-2">
+                <span class="bg-blue-600 text-white px-3 py-1 rounded-lg text-sm font-semibold">CodeIgniter</span>
+                <span class="bg-blue-600 text-white px-3 py-1 rounded-lg text-sm font-semibold">Git</span>
+                <span class="bg-blue-600 text-white px-3 py-1 rounded-lg text-sm font-semibold">MySQL</span>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gray-800 rounded-lg shadow-md flex flex-col hover:shadow-xl transition">
+            <img :src="'/images/Homepage_CNN.png'" alt="Portfolio Project" class="w-full h-80 rounded-t-md"/>
+            <div class="p-4 space-y-4">
+              <h3 class="text-2xl font-bold text-white text-inter">Penelitian CNN Cowhide Classification</h3>
+              <p class="text-gray-300 text-lg font-inter text-justify">
+                Penelitian akademik menggunakan Convolutional Neural Network (CNN) untuk klasifikasi kualitas kulit sapi.
+                Implementasi melibatkan preprocessing dataset, training model, dan visualisasi hasil dengan Grad-CAM.
+              </p>
+              <div class="flex flex-wrap gap-2 pt-2">
+                <span class="bg-blue-600 text-white px-3 py-1 rounded-lg text-sm font-semibold">Laravel</span>
+                <span class="bg-blue-600 text-white px-3 py-1 rounded-lg text-sm font-semibold">Python</span>
+                <span class="bg-blue-600 text-white px-3 py-1 rounded-lg text-sm font-semibold">TensorFlow</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
   
       <section class="bg-black h-screen flex flex-col items-center justify-center space-y-2" id="contact">
