@@ -82,33 +82,40 @@
       <section class="bg-slate-950 h-screen flex flex-col items-center justify-center space-y-2" id="projects">
         <h2 class="text-3xl md:text-4xl font-bold font-inter mb-6">PROJECTS</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl w-full px-6">
-          <div class="bg-gray-800 rounded-lg shadow-md flex flex-col hover:shadow-xl transition">
+          <div class="bg-gray-800 rounded-lg shadow-md flex flex-col border-2 border-transparent hover:border-blue-600 transition">
             <img :src="'/images/Homepage_EXCIS.jpg'" alt="Portfolio Project" class="w-full h-80 rounded-t-md"/>
-            <div class="p-4 space-y-4">
-              <h3 class="text-2xl font-bold text-white text-inter">Internship Full Stack EXCIS UMY</h3>
-              <p class="text-gray-300 text-lg font-inter text-justify">
-                Intership untuk mengembangkan website Extracurricular Credit System (EXCIS) di Direktorat Digital Informasi (DDI) UMY.
-                Khususnya mengembangkan untuk admin Direktorat Kemahasiswaan dan Karir (DKK).
+            <div class="p-4 space-y-3">
+              <h3 class="text-xl font-bold text-white text-inter">Internship Full Stack EXCIS UMY</h3>
+              <div class="flex flex-wrap gap-2">
+                <span class="bg-black border border-blue-600 text-white px-3 py-1 rounded-lg text-sm font-semibold text-inter">Internship</span>
+              </div>
+              <p class="text-gray-300 text-base font-inter text-justify leading-relaxed">
+                Internship to develop the Extracurricular Credit System (EXCIS) website at the Directorate of Digital Information (DDI) at UMY.
+                The focus was specifically on developing the system for administrators at the Directorate of Student Affairs and Careers (DKK).
               </p>
               <div class="flex flex-wrap gap-2 pt-2">
+                <span class="bg-blue-600 text-white px-3 py-1 rounded-lg text-sm font-semibold">Azure Data Studio</span>
                 <span class="bg-blue-600 text-white px-3 py-1 rounded-lg text-sm font-semibold">CodeIgniter</span>
                 <span class="bg-blue-600 text-white px-3 py-1 rounded-lg text-sm font-semibold">Git</span>
                 <span class="bg-blue-600 text-white px-3 py-1 rounded-lg text-sm font-semibold">MySQL</span>
               </div>
             </div>
           </div>
-          <div class="bg-gray-800 rounded-lg shadow-md flex flex-col hover:shadow-xl transition">
+          <div class="bg-gray-800 rounded-lg shadow-md flex flex-col border-2 border-transparent hover:border-blue-600 transition">
             <img :src="'/images/Homepage_CNN.png'" alt="Portfolio Project" class="w-full h-80 rounded-t-md"/>
-            <div class="p-4 space-y-4">
-              <h3 class="text-2xl font-bold text-white text-inter">Penelitian CNN Cowhide Classification</h3>
-              <p class="text-gray-300 text-lg font-inter text-justify">
-                Penelitian akademik menggunakan Convolutional Neural Network (CNN) untuk klasifikasi kualitas kulit sapi.
-                Implementasi melibatkan preprocessing dataset, training model, dan visualisasi hasil dengan Grad-CAM.
+            <div class="p-4 space-y-3">
+              <h3 class="text-xl font-bold text-white text-inter">Penelitian CNN Cowhide Classification</h3>
+              <div class="flex flex-wrap gap-2">
+                <span class="bg-black border border-blue-600 text-white px-3 py-1 rounded-lg text-sm font-semibold text-inter">Final Year Project</span>
+              </div>
+              <p class="text-gray-300 text-base font-inter text-justify leading-relaxed">
+                An academic research study used a Convolutional Neural Network (CNN) to classify the quality of cowhide.
+                The EfficientNetB2 model achieved 94.7% accuracy using Grad-CAM visualizations to increase the transparency of classification results.
               </p>
               <div class="flex flex-wrap gap-2 pt-2">
-                <span class="bg-blue-600 text-white px-3 py-1 rounded-lg text-sm font-semibold">Laravel</span>
                 <span class="bg-blue-600 text-white px-3 py-1 rounded-lg text-sm font-semibold">Python</span>
                 <span class="bg-blue-600 text-white px-3 py-1 rounded-lg text-sm font-semibold">TensorFlow</span>
+                <span class="bg-blue-600 text-white px-3 py-1 rounded-lg text-sm font-semibold">Laravel</span>
               </div>
             </div>
           </div>
@@ -187,6 +194,12 @@
       category: "Frameworks",
     },
     {
+      name: "TensorFlow",
+      description: "Deep learning framework",
+      logo: "/images/tensorflow.svg",
+      category: "Frameworks",
+    },
+    {
       name: "Vue.js",
       description: "Frontend UI",
       logo: "/images/vue.png",
@@ -202,6 +215,12 @@
       name: "Git",
       description: "Version control",
       logo: "/images/git.svg",
+      category: "Tools",
+    },
+    {
+      name: "Tailwind CSS",
+      description: "Utility CSS",
+      logo: "/images/tailwindcss.svg",
       category: "Tools",
     },
     {
