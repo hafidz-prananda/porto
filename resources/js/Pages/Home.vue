@@ -1,17 +1,17 @@
 <template>
   <AppLayout>
-    <section class="h-screen bg-slate-950 flex flex-col items-center justify-center space-y-4" id="home">
-      <h1 class="text-3xl font-inter">Full Stack Developer</h1>
-      <h1 class="text-6xl font-bold font-inter">HAFIDZ KALYANA NUR PRANANDA</h1>
+    <section class="min-h-screen bg-slate-950 flex flex-col items-center justify-center space-y-4" id="home">
+      <h1 class="text-xl md:text-3xl font-inter">Full Stack Developer</h1>
+      <h1 class="text-3xl md:text-6xl text-center font-bold font-inter">HAFIDZ KALYANA NUR PRANANDA</h1>
       <a href="#about">
-        <button class="px-4 bg-blue-700 hover:bg-blue-800 p-2 rounded-full text-3xl font-bold font-inter">MORE ABOUT ME</button>
+        <button class="px-4 py-2 bg-blue-700 hover:bg-blue-800 rounded-full text-lg md:text-3xl font-bold font-inter">MORE ABOUT ME</button>
       </a>
     </section>
   
-    <section class="bg-black h-screen flex flex-col items-center justify-center pt-20 pb-6 px-4 space-y-4" id="about">
+    <section class="bg-black min-h-screen flex flex-col items-center justify-center pt-20 pb-6 px-4 space-y-4" id="about">
       <!-- CONTAINER ABOUT ME -->
       <div class="max-w-6xl w-full text-center">
-        <h2 class="text-3xl md:text-4xl font-bold font-inter text-white mb-6">ABOUT ME</h2>
+        <h2 class="text-2xl md:text-4xl font-bold font-inter text-white mb-6">ABOUT ME</h2>
         <!-- PROFILE PHOTO -->
         <div class="flex flex-col md:flex-row items-center justify-center gap-8">
           <div class="shrink-0">
@@ -27,14 +27,14 @@
       </div>
       <!-- CONTAINER TECH STACK -->
       <div class="w-full max-w-6xl mx-auto text-center mt-6">
-        <h2 class="text-3xl md:text-4xl font-bold font-inter text-white mb-4">TECH STACK</h2>
+        <h2 class="text-2xl md:text-4xl font-bold font-inter text-white mb-4">TECH STACK</h2>
         <!-- CATEGORY BUTTON -->
         <div class="inline-flex p-1 space-x-1 bg-gray-800 border border-gray-700 rounded-full mb-6">
           <button
             v-for="cat in categories"
             :key="cat"
             @click="selectCategory(cat)"
-            class="px-4 py-1.5 rounded-full font-semibold text-base font-inter transition-all duration-300 cursor-pointer"
+            class="inline-flex items-center justify-center px-2 py-0.5 text-sm md:px-4 md:py-1.5 md:text-base rounded-full font-semibold font-inter transition-all duration-300 cursor-pointer"
             :class="activeCategory === cat ? 'bg-blue-600 text-white shadow' : 'bg-transparent text-gray-400 hover:text-white'"
           >
             {{ cat }}
@@ -62,8 +62,8 @@
               class="w-full sm:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)] bg-blue-700 border border-blue-600 rounded-lg shadow-md p-4 hover:shadow-xl transition-all duration-300 flex flex-col items-center justify-center"
             >
               <img :src="stack.logo" alt="logo" class="w-12 h-12 object-contain mb-2">
-              <h3 class="text-xl font-bold font-inter text-white">{{ stack.name }}</h3>
-              <p class="text-base text-blue-100 font-inter text-center line-clamp-2">{{ stack.description }}</p>
+              <h3 class="text-base md:text-xl font-bold font-inter text-white">{{ stack.name }}</h3>
+              <p class="text-sm md:text-base text-blue-100 font-inter text-center line-clamp-2">{{ stack.description }}</p>
             </div>
           </transition-group>
           <!-- NEXT BUTTON -->
@@ -78,43 +78,43 @@
       </div>
     </section>
   
-    <section class="bg-slate-950 h-screen flex flex-col items-center justify-center space-y-2" id="projects">
-      <h2 class="text-3xl md:text-4xl font-bold font-inter mb-6">PROJECTS</h2>
+    <section class="min-h-screen bg-slate-950 flex flex-col items-center justify-start pt-20 space-y-6 py-12" id="projects">
+      <h2 class="text-2xl md:text-4xl font-bold font-inter mb-6">PROJECTS</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl w-full px-6">
         <div class="bg-gray-800 rounded-lg shadow-md flex flex-col border-2 border-transparent hover:border-blue-600 transition">
-          <img :src="'/images/Homepage_EXCIS.jpg'" alt="Portfolio Project" class="w-full h-80 rounded-t-md"/>
+          <img :src="'/images/Homepage_EXCIS.jpg'" alt="Portfolio Project" class="w-full h-48 md:h-80 rounded-t-md"/>
           <div class="p-4 space-y-3">
-            <h3 class="text-xl font-bold text-white text-inter">Internship Full Stack EXCIS UMY</h3>
+            <h3 class="text-lg md:text-xl font-bold text-white text-inter">Internship Full Stack EXCIS UMY</h3>
             <div class="flex flex-wrap gap-2">
-              <span class="bg-black border border-blue-600 text-white px-3 py-1 rounded-lg text-sm font-semibold text-inter">Internship</span>
+              <span class="bg-black border border-blue-600 text-white px-3 py-1 rounded-lg text-xs md:text-sm font-semibold text-inter">Internship</span>
             </div>
-            <p class="text-gray-300 text-base font-inter text-justify leading-relaxed">
+            <p class="text-sm md:text-base text-gray-300 font-inter text-justify leading-relaxed">
               Internship to develop the Extracurricular Credit System (EXCIS) website at the Directorate of Digital Information (DDI) at UMY.
               The focus was specifically on developing the system for administrators at the Directorate of Student Affairs and Careers (DKK).
             </p>
             <div class="flex flex-wrap gap-2 pt-2">
-              <span class="bg-blue-600 text-white px-3 py-1 rounded-lg text-sm font-semibold">Azure Data Studio</span>
-              <span class="bg-blue-600 text-white px-3 py-1 rounded-lg text-sm font-semibold">CodeIgniter</span>
-              <span class="bg-blue-600 text-white px-3 py-1 rounded-lg text-sm font-semibold">Git</span>
-              <span class="bg-blue-600 text-white px-3 py-1 rounded-lg text-sm font-semibold">MySQL</span>
+              <span class="bg-blue-600 text-white px-3 py-1 rounded-lg text-xs md:text-sm font-semibold">Azure Data Studio</span>
+              <span class="bg-blue-600 text-white px-3 py-1 rounded-lg text-xs md:text-sm font-semibold">CodeIgniter</span>
+              <span class="bg-blue-600 text-white px-3 py-1 rounded-lg text-xs md:text-sm font-semibold">Git</span>
+              <span class="bg-blue-600 text-white px-3 py-1 rounded-lg text-xs md:text-sm font-semibold">MySQL</span>
             </div>
           </div>
         </div>
         <div class="bg-gray-800 rounded-lg shadow-md flex flex-col border-2 border-transparent hover:border-blue-600 transition">
-          <img :src="'/images/Homepage_CNN.png'" alt="Portfolio Project" class="w-full h-80 rounded-t-md"/>
+          <img :src="'/images/Homepage_CNN.png'" alt="Portfolio Project" class="w-full h-48 md:h-80 rounded-t-md"/>
           <div class="p-4 space-y-3">
-            <h3 class="text-xl font-bold text-white text-inter">CNN Cowhide Classification Research</h3>
+            <h3 class="text-lg md:text-xl font-bold text-white text-inter">CNN Cowhide Classification Research</h3>
             <div class="flex flex-wrap gap-2">
-              <span class="bg-black border border-blue-600 text-white px-3 py-1 rounded-lg text-sm font-semibold text-inter">Final Year Project</span>
+              <span class="bg-black border border-blue-600 text-white px-3 py-1 rounded-lg text-xs md:text-sm font-semibold text-inter">Final Year Project</span>
             </div>
-            <p class="text-gray-300 text-base font-inter text-justify leading-relaxed">
+            <p class="text-sm md:text-base text-gray-300 font-inter text-justify leading-relaxed">
               An academic research study used a Convolutional Neural Network (CNN) to classify the quality of cowhide.
               The EfficientNetB2 model achieved 94.7% accuracy using Grad-CAM visualizations to increase the transparency of classification results.
             </p>
             <div class="flex flex-wrap gap-2 pt-2">
-              <span class="bg-blue-600 text-white px-3 py-1 rounded-lg text-sm font-semibold">Python</span>
-              <span class="bg-blue-600 text-white px-3 py-1 rounded-lg text-sm font-semibold">TensorFlow</span>
-              <span class="bg-blue-600 text-white px-3 py-1 rounded-lg text-sm font-semibold">Laravel</span>
+              <span class="bg-blue-600 text-white px-3 py-1 rounded-lg text-xs md:text-sm font-semibold">Python</span>
+              <span class="bg-blue-600 text-white px-3 py-1 rounded-lg text-xs md:text-sm font-semibold">TensorFlow</span>
+              <span class="bg-blue-600 text-white px-3 py-1 rounded-lg text-xs md:text-sm font-semibold">Laravel</span>
             </div>
           </div>
         </div>
@@ -122,9 +122,9 @@
     </section>
   
     <section class="bg-black min-h-screen flex flex-col items-center justify-center py-16 px-6" id="contact">
-      <h2 class="text-4xl font-bold text-white font-inter mb-8">Get In Touch</h2>
+      <h2 class="text-2xl md:text-4xl font-bold text-white font-inter mb-8">Get In Touch</h2>
       <div class="bg-gray-800 rounded-xl shadow-lg p-8 w-full max-w-2xl space-y-6">
-        <p class="text-gray-300 text-lg text-center leading-relaxed">
+        <p class="text-gray-300 text-base md:text-lg text-center leading-relaxed">
           I’m open to discussions, collaborations, and job opportunities. Please feel free to contact me via email or LinkedIn.
         </p>
 
