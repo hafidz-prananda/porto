@@ -7,13 +7,13 @@
       </a>
 
       <div class="flex items-center gap-4">
-        <a class="relative text-xl font-bold font-inter after:block after:h-[2px] after:bg-blue-700 after:scale-x-0 hover:after:scale-x-100 after:transition after:duration-300 after:origin-left" href="#about">
+        <a class="relative text-base md:text-2xl font-bold font-inter after:block after:h-[2px] after:bg-blue-700 after:scale-x-0 hover:after:scale-x-100 after:transition after:duration-300 after:origin-left" href="#about">
           ABOUT
         </a>
-        <a class="relative text-xl font-bold font-inter after:block after:h-[2px] after:bg-blue-700 after:scale-x-0 hover:after:scale-x-100 after:transition after:duration-300 after:origin-left" href="#projects">
+        <a class="relative text-base md:text-2xl font-bold font-inter after:block after:h-[2px] after:bg-blue-700 after:scale-x-0 hover:after:scale-x-100 after:transition after:duration-300 after:origin-left" href="#projects">
           PROJECTS
         </a>
-        <a class="relative text-xl font-bold font-inter after:block after:h-[2px] after:bg-blue-700 after:scale-x-0 hover:after:scale-x-100 after:transition after:duration-300 after:origin-left pr-4" href="#contact">
+        <a class="relative text-base md:text-2xl font-bold font-inter after:block after:h-[2px] after:bg-blue-700 after:scale-x-0 hover:after:scale-x-100 after:transition after:duration-300 after:origin-left pr-4" href="#contact">
           CONTACT
         </a>
       </div>

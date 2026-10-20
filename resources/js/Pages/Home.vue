@@ -17,11 +17,10 @@
           <div class="shrink-0">
             <img :src="'images/photo.jpeg'" alt="Profile Photo" class="w-52 h-68 md:h-56 md:h-72 object-cover rounded-lg shadow-lg">
           </div>
-
           <div class="space-y-3 text-gray-300 text-left">
-            <p class="text-base md:text-xl text-justify font-inter leading-relaxed">I'm an Information Technology fresh graduate with a focus on fullstack and backend development.</p>
-            <p class="text-base md:text-xl text-justify font-inter leading-relaxed">While I am just starting my professional career in the industry, I have gained a deep understanding of modern web development workflows through independent research, internship, and the completion of academic projects. I am experienced in designing application architectures using <b>Laravel</b>, managing <b>MySQL</b> databases, and integrating interactive user interfaces built with <b>Vue.js</b></p>
-            <p class="text-base md:text-xl text-justify font-inter leading-relaxed">As a fresh graduate, I am highly motivated to learn, adaptable to industry standard workflows, and ready to make a meaningful contribution to a development team.</p>
+            <p class="text-base md:text-lg text-justify font-inter leading-relaxed">I'm an Information Technology fresh graduate with a focus on fullstack and backend development.</p>
+            <p class="text-base md:text-lg text-justify font-inter leading-relaxed">While I am just starting my professional career in the industry, I have gained a deep understanding of modern web development workflows through independent research, internship, and the completion of academic projects. I am experienced in designing application architectures using <b>Laravel</b>, managing <b>MySQL</b> databases, and integrating interactive user interfaces built with <b>Vue.js</b></p>
+            <p class="text-base md:text-lg text-justify font-inter leading-relaxed">As a fresh graduate, I am highly motivated to learn, adaptable to industry standard workflows, and ready to make a meaningful contribution to a development team.</p>
           </div>
         </div>
       </div>
