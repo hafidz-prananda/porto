@@ -1,19 +1,19 @@
 <template>
   <div class="relative min-h-screen bg-black text-white overflow-hidden">
     <!-- Navbar Kamu -->
-    <nav class="fixed top-0 left-0 w-full bg-black/80 backdrop-blur-xs text-white flex items-center justify-between p-4 z-50">
-      <a href="#home" class="flex items-center gap-3 group pl-2">
-        <img :src="'/images/logo.jpg'" alt="Hafidz Prananda" class="w-10 h-10 rounded-full object-cover border-2 border-transparent group-hover:border-blue-700 trasition duration-300">
+    <nav class="fixed top-0 left-0 w-full bg-black/80 backdrop-blur-md text-white flex items-center justify-between px-4 sm:px-6 py-3 z-50">
+      <a href="#home" class="flex items-center group">
+        <img :src="'/images/logo.jpg'" alt="Hafidz Prananda" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover border-2 border-transparent group-hover:border-blue-700 trasition duration-300">
       </a>
 
-      <div class="flex items-center gap-4">
-        <a class="relative text-base md:text-2xl font-bold font-inter after:block after:h-[2px] after:bg-blue-700 after:scale-x-0 hover:after:scale-x-100 after:transition after:duration-300 after:origin-left" href="#about">
+      <div class="flex items-center gap-4 sm:gap-6">
+        <a class="relative text-sm sm:text-base md:text-xl font-bold font-inter after:block after:h-[2px] after:bg-blue-700 after:scale-x-0 hover:after:scale-x-100 after:transition after:duration-300 after:origin-left" href="#about">
           ABOUT
         </a>
-        <a class="relative text-base md:text-2xl font-bold font-inter after:block after:h-[2px] after:bg-blue-700 after:scale-x-0 hover:after:scale-x-100 after:transition after:duration-300 after:origin-left" href="#projects">
+        <a class="relative text-sm sm:text-base md:text-xl font-bold font-inter after:block after:h-[2px] after:bg-blue-700 after:scale-x-0 hover:after:scale-x-100 after:transition after:duration-300 after:origin-left" href="#projects">
           PROJECTS
         </a>
-        <a class="relative text-base md:text-2xl font-bold font-inter after:block after:h-[2px] after:bg-blue-700 after:scale-x-0 hover:after:scale-x-100 after:transition after:duration-300 after:origin-left pr-4" href="#contact">
+        <a class="relative text-sm sm:text-base md:text-xl font-bold font-inter after:block after:h-[2px] after:bg-blue-700 after:scale-x-0 hover:after:scale-x-100 after:transition after:duration-300 after:origin-left pr-2 sm:pr-0" href="#contact">
           CONTACT
         </a>
       </div>
@@ -56,7 +56,7 @@ const updateScroll = () => {
   
   const calculatedHeight = (clientHeight / scrollHeight) * clientHeight;
   // Hitung tinggi indikator scrollbar secara proporsional dengan tinggi layar
-  thumbHeightPx.value = Math.max(calculatedHeight, 70);
+  thumbHeightPx.value = Math.max(calculatedHeight, 50);
 
   if (totalScrollable > 0) {
     const progress = scrollTop / totalScrollable;

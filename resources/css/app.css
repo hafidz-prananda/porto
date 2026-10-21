@@ -31,35 +31,47 @@ body {
 .carousel-next-leave-active,
 .carousel-prev-leave-active {
     position: absolute;
-    width: calc(33.333% - 11px);
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+@media (min-width: 1024px) {
+    .carousel-leave-active,
+    .carousel-next-leave-active,
+    .carousel-prev-leave-active {
+        position: absolute;
+        width: calc(33.333% - 11px);
+    }
 }
 
 .carousel-enter-from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(15px);
 }
 
 .carousel-leave-to {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-15px);
 }
 
 .carousel-next-enter-from {
     opacity: 0;
-    transform: translateX(30px);
+    transform: translateX(20px);
 }
 
 .carousel-next-leave-to {
     opacity: 0;
-    transform: translateX(-30px);
+    transform: translateX(-20px);
 }
 
 .carousel-prev-enter-from {
     opacity: 0;
-    transform: translateX(-30px);
+    transform: translateX(-20px);
 }
 
 .carousel-prev-leave-to {
     opacity: 0;
-    transform: translateX(30px);
+    transform: translateX(20px);
 }
