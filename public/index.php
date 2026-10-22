@@ -1,5 +1,9 @@
 <?php
 
+if (isset($_SERVER['VERCEL']) || isset($_ENV['VERCEL'])) {
+    $_ENV['APP_STORAGE'] = '/tmp/storage';
+}
+
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
 
