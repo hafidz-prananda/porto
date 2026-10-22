@@ -13,26 +13,18 @@ define('LARAVEL_START', microtime(true));
 |--------------------------------------------------------------------------
 | Check If The Application Is Under Maintenance
 |--------------------------------------------------------------------------
-|
-| If the application is in maintenance / demo mode via the "down" command
-| we will load this file so that any pre-rendered content can be shown
-| instead of starting the framework, which could cause an exception.
-|
 */
 
-if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php')) {
-    require $maintenance;
+// PERHATIAN: Karena storage dialihkan ke /tmp, cek maintenance juga diarahkan ke sana jika diperlukan
+$maintenancePath = (isset($_ENV['APP_STORAGE']) ? $_ENV['APP_STORAGE'] : __DIR__.'/../storage') . '/framework/maintenance.php';
+if (file_exists($maintenancePath)) {
+    require $maintenancePath;
 }
 
 /*
 |--------------------------------------------------------------------------
 | Register The Auto Loader
 |--------------------------------------------------------------------------
-|
-| Composer provides a convenient, automatically generated class loader for
-| this application. We just need to utilize it! We'll simply require it
-| into the script here so we don't need to manually load our classes.
-|
 */
 
 require __DIR__.'/../vendor/autoload.php';
@@ -41,14 +33,30 @@ require __DIR__.'/../vendor/autoload.php';
 |--------------------------------------------------------------------------
 | Run The Application
 |--------------------------------------------------------------------------
-|
-| Once we have the application, we can handle the incoming request using
-| the application's HTTP kernel. Then, we will send the response back
-| to this client's browser, allowing them to enjoy our application.
-|
 */
 
 $app = require_once __DIR__.'/../bootstrap/app.php';
+
+/*
+|--------------------------------------------------------------------------
+| Override Storage Path for Vercel (PENTING)
+|--------------------------------------------------------------------------
+*/
+if (isset($_ENV['APP_STORAGE'])) {
+    $storagePath = $_ENV['APP_STORAGE'];
+    
+    // Buat folder fisik di /tmp jika belum ada agar Laravel bisa menulis log/cache
+    if (!is_dir($storagePath)) {
+        @mkdir($storagePath, 0777, true);
+        @mkdir($storagePath . '/framework/cache/data', 0777, true);
+        @mkdir($storagePath . '/framework/sessions', 0777, true);
+        @mkdir($storagePath . '/framework/views', 0777, true);
+        @mkdir($storagePath . '/logs', 0777, true);
+    }
+
+    // Paksa Laravel menggunakan path baru di /tmp
+    $app->useStoragePath($storagePath);
+}
 
 $kernel = $app->make(Kernel::class);
 
