@@ -6,7 +6,8 @@
       "environment": {
         "APP_STORAGE": "/tmp/storage",
         "VIEW_COMPILED_PATH": "/tmp/storage/framework/views",
-        "CACHE_STORE": "array"
+        "CACHE_STORE": "array",
+        "LOG_CHANNEL": "stderr"
       }
     }
   },
